@@ -1,1 +1,0 @@
-# thiruppathi.github.io
