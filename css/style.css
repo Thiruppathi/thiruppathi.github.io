@@ -889,6 +889,10 @@ ul.portfolioContainer li .lightCon {
 	position:relative;
 	overflow:hidden;
 }
+ul.portfolioContainer li .lightCon .logo{
+	width: 75px;
+	height: 75px;
+}
 ul.portfolioContainer li img {
 	width:100%;
 	height:auto;
