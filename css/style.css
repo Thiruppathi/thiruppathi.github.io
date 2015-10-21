@@ -148,6 +148,7 @@ header {
 	overflow:hidden;
 	margin:0 auto !important;
 	background:#CACACA;
+	height: auto;
 }
 .bannerText {
 	position:absolute ;
