@@ -805,6 +805,60 @@ header {
 	color:#5b4c5c;
 }
 /*----------------------------------------------------
+ 9.	Groups Style
+------------------------------------------------------*/
+.groups {
+	background:#ffffff;
+}
+.groups .container {
+	padding-top:120px;
+	padding-bottom:120px;
+}
+.groups h2 {
+	color:#5b4c5c;
+	margin-bottom:45px;
+}
+.groups p {
+	color:#897f8a;
+	/*font-size:13px;*/
+	line-height:27px;
+}
+.groups .heading p {
+	padding-bottom:54px;
+	max-width:660px;
+	text-align:center;
+	display:block;
+	margin:0 auto;
+	line-height:27px;
+}
+.groups h4 {
+	font-weight:700;
+}
+.groups .arrowpart {
+	margin-left:-26px;
+	margin-top:32px;
+	float:left;
+	width:22px;
+	height:22px;
+	background:url(../images/arrow-left.png) no-repeat 0 0 #ffffff;
+}
+.groups .exCon {
+
+}
+.groups .workDetails .rightArea {
+	border-left-color:#897f8a;
+}
+
+.myLinks {
+	border-bottom: 1px dashed #897f8a;
+    color: #897f8a;
+}
+
+.myLinks:hover {
+	text-decoration: none;
+	color:#5b4c5c;
+}
+/*----------------------------------------------------
  10. Protfolio Style
 ------------------------------------------------------*/
 .protfolio {
