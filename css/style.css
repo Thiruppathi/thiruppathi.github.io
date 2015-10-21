@@ -148,7 +148,6 @@ header {
 	overflow:hidden;
 	margin:0 auto !important;
 	background:#CACACA;
-	height: auto;
 }
 .bannerText {
 	position:absolute ;
@@ -662,23 +661,23 @@ header {
 /*----------------------------------------------------
  8.	Work Experience Style
 ------------------------------------------------------*/
-.exprience {
+.experience {
 	background:#f8f7f8;
 }
-.exprience .container {
+.experience .container {
 	padding-top:116px;
 	padding-bottom:120px;
 }
-.exprience h2 {
+.experience h2 {
 	color:#5b4c5c;
 	margin-bottom:41px;
 }
-.exprience p {
+.experience p {
 	color:#84868d;
 	/*font-size:13px;*/
 	line-height:18px;
 }
-.exprience .heading p {
+.experience .heading p {
 	padding-bottom:54px;
 	max-width:660px;
 	text-align:center;
@@ -687,7 +686,7 @@ header {
 	color:#897f8a;
 	line-height:27px;
 }
-.exprience h4 {
+.experience h4 {
 	font-weight:700;
 }
 
