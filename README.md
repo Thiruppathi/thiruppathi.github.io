@@ -9,4 +9,4 @@ My Profile and Portfolio
 * Add the Events
 * Add the Certification/Courses In Progress
 * Add Codecademy-Udemy-Udacity Profiles
-* Add Attitudesigns 
+* Add Attitudesigns
