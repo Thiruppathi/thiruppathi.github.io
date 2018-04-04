@@ -336,6 +336,7 @@ header {
 .isStuck {
 	left:0px;
 	width:100%;
+	box-shadow: 0 0 40px rgba(0,0,0,.2);
 }
 .menu {
 	margin-top:0px;
