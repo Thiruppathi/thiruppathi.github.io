@@ -75,6 +75,7 @@ p {
 	padding-bottom:38px;
 	margin:0px;
 }
+
 h1 {
 	font-family: 'Open Sans', sans-serif;
 	font-size:48px;
@@ -796,6 +797,51 @@ header {
 	border-left-color:#897f8a;
 }
 
+/*----------------------------------------------------
+ 9.	Books TimeLine Style
+------------------------------------------------------*/
+.timeline {
+	background:#ffffff;
+}
+.timeline .container {
+	padding-top:120px;
+	padding-bottom:120px;
+}
+.timeline h2 {
+	color:#5b4c5c;
+	margin-bottom:45px;
+}
+.timeline p {
+	color:#897f8a;
+	/*font-size:13px;*/
+	line-height:27px;
+}
+.timeline .heading p {
+	padding-bottom:54px;
+	max-width:660px;
+	text-align:center;
+	display:block;
+	margin:0 auto;
+	line-height:27px;
+}
+.timeline h4 {
+	font-weight:700;
+}
+.timeline .arrowpart {
+	margin-left:-26px;
+	margin-top:32px;
+	float:left;
+	width:22px;
+	height:22px;
+	background:url(../images/arrow-left.png) no-repeat 0 0 #ffffff;
+}
+.timeline .exCon {
+	padding: 35px 47px 6px 30px;
+}
+.timeline .workDetails .rightArea {
+	border-left-color:#897f8a;
+}
+
 .myLinks {
 	border-bottom: 1px dashed #897f8a;
     color: #897f8a;
@@ -805,6 +851,16 @@ header {
 	text-decoration: none;
 	color:#5b4c5c;
 }
+
+.goodReadsLink {
+    color: #897f8a;
+}
+
+.goodReadsLink:hover {
+	text-decoration: none;
+	color:#5b4c5c;
+}
+
 /*----------------------------------------------------
  9.	Groups Style
 ------------------------------------------------------*/
@@ -1565,4 +1621,10 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
  left:0px;
  top:0px;
 }
+}
+
+
+.daysofReading {
+	font-size:18px;
+	max-width: 80%;
 }
