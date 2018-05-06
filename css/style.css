@@ -1628,3 +1628,11 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 	font-size:18px;
 	max-width: 80%;
 }
+.thiruIconHolder {
+	text-align: center;
+}
+.thiruIcon {
+	border-radius: 100%;
+	width: 200px;
+	height: 200px;
+}
