@@ -1409,7 +1409,49 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 	text-align:center;
 	}
 
+/*---------------------------------------------------------------------------------
+ 13. Rules 
+-------------------------------------------------------------------------------*/
+	.rules {
+		background:#fff;
+		}
+	.rules .container{
+		 padding-bottom: 123px;
+		padding-top: 123px;
+		}
+	.rules h2 {
+		color:#5b4c5c;
+		margin-bottom:49px;
+	}
+	.rules .heading p{
+		padding-bottom:41px;
+		max-width:660px;
+		text-align:center;
+		display:block;
+		margin:0 auto;
+		}
+	.rules p{
+		color:#897f8a
+		}
 
+	.rules ul {
+		text-align: left;
+		color:#5b4c5c;
+		margin: 0 auto;
+		max-width: 500px;
+	}
+
+	.rules h5 {
+		font-size: 18px;
+	}
+	
+	.lessons {
+		background: #f8f7f8
+	}
+	
+	.lessons ul{
+		max-width: 70%;
+	}
 /*---------------------------------------------------------------------------------
  13. Responsive style
 -------------------------------------------------------------------------------*/
@@ -1635,4 +1677,11 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 	border-radius: 100%;
 	width: 200px;
 	height: 200px;
+}
+
+.userIcon {
+	border-radius: 100%;
+	width: 150px;
+	height: 150px;
+	margin: 0 10px;
 }
