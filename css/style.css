@@ -1451,6 +1451,7 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 		color:#5b4c5c;
 		margin: 0 auto;
 		max-width: 600px;
+		line-height: 2em;
 	}
 
 	.rules h5 {
@@ -1463,6 +1464,11 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 	
 	.lessons ul{
 		max-width: 70%;
+	}
+
+	.rules ul li ul {
+		margin-left: 40px;
+		font-size: 16px;
 	}
 /*---------------------------------------------------------------------------------
  13. Responsive style
