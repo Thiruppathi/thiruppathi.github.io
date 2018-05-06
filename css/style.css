@@ -1208,6 +1208,18 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 .refBox{
 	padding:0 10px;
 	}
+
+.reffernces  ul {
+		text-align: left;
+		color:#5b4c5c;
+		margin: 0 auto;
+		max-width: 600px;
+	}
+
+	.reffernces  ul h5 {
+		font-size: 18px;
+	}
+
 /*----------------------------------------------------
  11. Get in tuch Style
 ------------------------------------------------------*/
@@ -1438,7 +1450,7 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 		text-align: left;
 		color:#5b4c5c;
 		margin: 0 auto;
-		max-width: 500px;
+		max-width: 600px;
 	}
 
 	.rules h5 {
