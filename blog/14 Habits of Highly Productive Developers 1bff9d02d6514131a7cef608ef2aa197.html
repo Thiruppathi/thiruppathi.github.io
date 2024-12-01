@@ -1,0 +1,720 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>14 Habits of Highly Productive Developers</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="afb88a05-b296-45ed-a37f-296c80423c87" class="page mono"><header><h1 class="page-title">14 Habits of Highly Productive Developers</h1><table class="properties"><tbody><tr class="property-row property-row-relation"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesRelation"><polygon points="4.5 1 4.5 3 9.586 3 1 11.586 2.414 13 11 4.414 11 9.5 13 9.5 13 1"></polygon></svg></span>Action Items</th><td><a href="https://www.notion.so/Build-Infographic-Summary-cf97009c740f45ed9b215484802a7b11">Build Infographic Summary</a></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Author</th><td><span class="selected-value">Zeno Rocha</span></td></tr><tr class="property-row property-row-file"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesFile"><path d="M5.94578,14 C4.62416,14 3.38248,13.4963 2.44892,12.585 C1.514641,11.6736 1,10.4639 1,9.17405 C1.00086108,7.88562 1.514641,6.67434 2.44892,5.76378 L7.45612,0.985988 C8.80142,-0.327216 11.1777,-0.332396 12.5354,0.992848 C13.9369,2.36163 13.9369,4.58722 12.5354,5.95418 L8.03046,10.2414 C7.16278,11.0877 5.73682,11.0894 4.86024,10.2345 C3.98394,9.37789 3.98394,7.98769 4.86024,7.1327 L6.60422,5.4317 L7.87576,6.67196 L6.13177,8.37297 C6.01668,8.48539 6.00003,8.61545 6.00003,8.68335 C6.00003,8.75083 6.01668,8.88103 6.13177,8.99429 C6.36197,9.21689 6.53749,9.21689 6.76768,8.99429 L11.2707,4.70622 C11.9645,4.03016 11.9645,2.91757 11.2638,2.23311 C10.5843,1.57007 9.40045,1.57007 8.72077,2.23311 L3.71342,7.0109 C3.12602,7.58406 2.79837,8.35435 2.79837,9.17405 C2.79837,9.99459 3.12602,10.7654 3.72045,11.3446 C4.90947,12.5062 6.98195,12.5062 8.17096,11.3446 L10.41911,9.15165 L11.6906,10.3919 L9.4425,12.585 C8.50808,13.4963 7.2664,14 5.94578,14 Z"></path></svg></span>Cover</th><td><span style="margin-right:6px"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/14.png"><img style="width:20px;max-height:24px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/14.png" alt="14.png"/></a></span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Format</th><td><span class="selected-value select-value-color-orange">Kindle</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Genre</th><td><span class="selected-value select-value-color-brown">Career</span><span class="selected-value select-value-color-orange">Computer Science</span><span class="selected-value select-value-color-purple">Programming</span></td></tr><tr class="property-row property-row-relation"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesRelation"><polygon points="4.5 1 4.5 3 9.586 3 1 11.586 2.414 13 11 4.414 11 9.5 13 9.5 13 1"></polygon></svg></span>Notes &amp; Ideas</th><td></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Price</th><td>Kindle Unlimtied</td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Priority</th><td><span class="selected-value select-value-color-brown">Medium</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Purpose</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Recommended</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Source</th><td><span class="selected-value select-value-color-blue">Twitter</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Status</th><td><span class="selected-value select-value-color-brown">Read</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Subtitle</th><td>Including tips by top developers from Google, Microsoft, Spotify, Amazon &amp; more</td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Symbols</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tags</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Themes</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Type</th><td><span class="selected-value select-value-color-blue">Non-Fiction</span></td></tr></tbody></table></header><div class="page-body"><p id="c957517a-b10f-4f44-a212-4819efed6751" class="">
+</p><h3 id="a2150ba3-3744-4e2c-88d6-d05c774f5395" class="">Action Items</h3><ul id="f0f405b9-a31c-4ee4-a4c7-f8bc0cbe4268" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Mini-Summary for each chapter</span></li></ul><ul id="3ec5f2ad-4299-4a85-a8f8-c34619320820" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Networked Thoughts ( Roam Research)</span></li></ul><ul id="336c3a37-14b2-413d-824d-c648541031a2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Goodreads Review</span></li></ul><ul id="5f068bcd-be57-4cea-aa21-75e1c7f59984" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Bookly Infographic</span></li></ul><ul id="03c74a06-e31d-4843-9ab7-420a664bb635" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Build Infographic Poster</span></li></ul><ul id="bbe24fdc-fc43-4b00-94f6-de8ed81be6d2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Start with a Teacher mindset</span></li></ul><ul id="ab9ae942-4ba1-458e-867e-3cbc4b7d6910" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Explain to a five year old</span></li></ul><ul id="8afb2ea7-1642-4a14-92a7-d73ad9388f6b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Fit into Daily Routine</span></li></ul><p id="2f96c9e4-a82b-4abf-a48d-08833ad7e4c2" class="">
+</p><h3 id="3cfd4b8e-f1e5-4630-b136-190f8fe6fb4d" class="">Overview</h3><p id="10dcfa48-2a21-4162-90d8-d344d3bc8981" class="">What habits do I need to cultivate in order to be effective in any programming language? </p><p id="8c49d374-8aeb-4017-89fd-00b99aefe6e4" class="">
+</p><h3 id="d53da79b-2032-4b23-b2e8-0173379ae9d7" class="">Infographic</h3><p id="3f38f2e9-3334-4338-86ac-bcc50cbb9484" class="">
+</p><h3 id="e30843e0-a2f7-4972-9219-bde279f9a76a" class="">Main Ideas</h3><p id="77af44df-0462-4c5a-8db3-b93cc1601ff8" class="">
+</p><h3 id="7b0c3dbd-c065-4389-9016-d5c524e1d404" class="">Context</h3><p id="d303436e-5c1a-41c5-ad6d-caed5921a9dc" class="">
+</p><h3 id="80fed8a3-569e-4d89-9897-015aff7dc8cb" class="">Summary</h3><p id="9e058d0e-098b-433c-8716-2948e6c91a98" class="">
+</p><h3 id="f456556a-1028-4d86-9067-94ee47bc4ef5" class="">Part Summaries</h3><p id="e5e46409-3594-4d08-9f75-d00406f09bab" class="">
+</p><ul id="30bb6db2-1a39-4fed-8dd6-644e3e445cc9" class="toggle"><li><details open=""><summary><mark class="highlight-yellow">Part 1: Principles</mark></summary><p id="2698ba89-ba41-48e7-ab86-1fcc79c39cd3" class="">Big ideas &amp; Arguments supporting big ideas:</p><p id="d535f97c-dcc8-4753-9fd8-8ff8c4b4404b" class="">Interesting facts, stats, or analogies:</p><ul id="1ba08814-f9d3-4c9a-a0e2-7eef1f890e55" class="bulleted-list"><li>Consistency Matters. Gym vs Professional Career</li></ul><ul id="e4b66c81-f4a7-4950-a308-2627e1aa6b93" class="bulleted-list"><li>The Habits you decide to cultivate will determine your future life opportunities.</li></ul><p id="97a3bd11-ec97-4745-b6cf-ed0e93d1accb" class="">
+</p><p id="0ab4e5c3-ea64-4741-8d06-961757812740" class="">Resonating quotes:</p><blockquote id="987dc872-cb98-43f9-936c-696b19b7cca3" class="">“Habits are the compound interest of self-improvement. The same way that money multiplies through compound interest, the effects of your habits multiply as you repeat them. They seem to make little difference on any given day and yet the impact they deliver over the months and years can be enormous. It is only when looking back two, five, or perhaps ten years later that the value of good habits and the cost of bad ones becomes strikingly apparent.”
+
+- James Clear in Atomic Habits</blockquote><p id="c05c6250-0310-437b-b0c9-8a3c9f38a09d" class="">
+</p><p id="f7459d32-b859-4bba-af46-9e149f1c1cbd" class=""><strong>Other thoughts</strong><strong>:</strong></p><p id="49233562-542f-4791-8d81-c5ae88fa22ca" class="">Gives a feel of yet another book which could have been a 2 part blog posts</p></details></li></ul><ul id="7f14ba0f-65a9-440f-9817-a0074a263c33" class="toggle"><li><details open=""><summary><mark class="highlight-yellow">Part 2: Learning Habits</mark></summary><ul id="97a51544-674d-4975-a8d1-5a533d11f281" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 1: Look For the Signals</mark></summary><p id="a823136b-5a18-4663-a568-c8e0f247e891" class=""><strong>Big ideas:</strong></p><ul id="21250874-b64f-4676-8fd9-2eac13b1bd0d" class="bulleted-list"><li>Say no to FOMO (Fear of Missing Out)</li></ul><ul id="c9b66f16-455a-4c38-b98b-cf339e9b5271" class="bulleted-list"><li>Practice JOMO (Joy of Missing Out)</li></ul><ul id="dee4348a-f474-4475-8b40-ca2ed721d09c" class="bulleted-list"><li>Identify what is the Signal &amp; what is just a Noise</li></ul><ul id="19b3e413-b322-40bc-9815-06c8c745b5a4" class="bulleted-list"><li>Exploring everything will result in fatigue or choice paralysis</li></ul><ul id="817edcd9-8c37-4992-9556-46c74de792f7" class="bulleted-list"><li>Avoid Dev-Tourism</li></ul><ul id="2823f82c-5af4-48b1-ba24-107890a66cae" class="bulleted-list"><li>Consider how transferable the acquired knowledge is</li></ul><p id="974eba6c-c9eb-400a-aa12-a2767cca4995" class="">
+</p><p id="11d00cb3-e0d2-490b-baf5-6286bebf34fd" class=""><strong>Arguments supporting big ideas:</strong></p><ul id="4842d068-9711-41db-b9c3-0147c7a34b88" class="bulleted-list"><li>FOMO &amp; JOMO - MacOs, Windows, Ubuntu, React, etc., There is no such thing as best tool</li></ul><ul id="a711b738-9fa6-4b59-9fc9-661913bb7a24" class="bulleted-list"><li>Noise vs Signal<ul id="590a24c2-4c5b-4f11-9d5c-a4e7da682d2a" class="bulleted-list"><li>Radio </li></ul></li></ul><p id="2b8569cd-c33e-42b7-8368-b68cad1a553a" class="">
+</p><p id="2d510bca-eb77-44a2-866c-0028a8b17c3d" class=""><strong>Interesting facts, stats, or analogies:</strong></p><p id="b2e7bdfb-e330-4a69-ae97-0691a88b7096" class=""><strong>Resonating quotes:</strong></p><blockquote id="ba83f4f8-10ac-4d9c-aba2-e8acfd59f09f" class="">Hear the Noise, but only pay attention to Signals</blockquote><blockquote id="a96b5d17-1440-4c8e-b59d-bf357109b663" class="">Remember Desires are endless; needs are limited</blockquote><blockquote id="3b45d5a9-72d6-44f8-b9f5-d0c7bf21f706" class="">Accept that you can&#x27;t learn everything, but you can learn enough to be effective</blockquote><p id="bede2f7f-b8ea-421f-aa1d-554db172780d" class="">
+</p><p id="f3937cf7-4314-4ef3-8a6d-24cbf421fba7" class=""><strong>Action steps:</strong></p><ul id="4a786462-86ef-40e6-86b1-0d93452a6f74" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">List all Technologies &amp; Tools you want to learn</span></li></ul><ul id="677e3f6e-c126-4e4f-9846-5e9ace7445a0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Label each with a different priority such as
+<mark class="highlight-orange_background"> This Week </mark>,<mark class="highlight-yellow_background"> Next Month </mark>, <mark class="highlight-pink_background"> Next Year </mark>.</span></li></ul><ul id="697ab507-3b12-4183-bf35-83edebedb715" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Whenever FOMO hits because of shiny trend, revisit this list and recognize the priority</span></li></ul><ul id="717eef38-9eb2-4134-8f67-c1cb09fa15eb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Is there any enterprise adopting to new Shiny Object</span></li></ul><ul id="264214c0-7b2a-4979-ad05-320c4b91a720" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Focus more on Web Standards</span></li></ul></details></li></ul><ul id="d3abfe37-1e28-4fa4-ab07-1708c50f43d7" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 2: Focus on the Fundamentals</mark></summary><p id="37c19d6d-9810-4370-bccc-a080f9e58718" class=""><strong>Big ideas:</strong></p><ul id="1a02658f-e1a4-4af4-91cc-c14072597da8" class="bulleted-list"><li>Understand core concepts such as algorithms, logic, network, a11y, security &amp; UX</li></ul><p id="152aefc7-992c-4b80-81b0-dab7ae7cd4f6" class=""><strong>Arguments supporting big ideas:</strong></p><p id="7b30ca28-1749-4e37-8915-e1c029e03cf6" class=""><strong>Interesting facts, stats, or analogies:</strong></p><ul id="7d8ff952-9286-4f55-8216-f03b49414c7a" class="bulleted-list"><li>Painter<ul id="b9b81662-3fa6-440b-834f-a3aafb56fc8f" class="bulleted-list"><li>Color Theory - Meanings, Compositions, Moods</li></ul><ul id="079dd5f4-2698-4778-8d1a-9279ec8bb5f5" class="bulleted-list"><li>Perspective - Shadow &amp; Lighting</li></ul><ul id="2cba1734-056d-47a3-9a4c-c0559e5908c6" class="bulleted-list"><li>Form - 3D &amp; Illusion of volume</li></ul><ul id="58296bec-ebaa-4fb0-81e1-10a57cf08f55" class="bulleted-list"><li>Anatomy - Right proportion &amp; Body Structure</li></ul></li></ul><ul id="1c31f503-cdf2-4377-8679-b84eab0414b0" class="bulleted-list"><li>Developer<ul id="d3a5ebcd-5f6e-472c-94c5-6b62ca9a8ef8" class="bulleted-list"><li>Data Structures &amp; Algorithms</li></ul><ul id="e554ec92-6a39-4416-aff8-77be3b8492c3" class="bulleted-list"><li>UX</li></ul><ul id="2dd5049d-219e-4733-8240-b95da3fbbfcf" class="bulleted-list"><li>Network &amp; Security</li></ul><ul id="c87ab046-7b51-45af-b18b-48f65954a4b7" class="bulleted-list"><li>A11y</li></ul></li></ul><p id="fbe69e02-ad23-4267-8aea-1000dd7a3ac5" class=""><strong>Resonating quotes:</strong></p><p id="52d8d281-0bab-4081-9d1e-21937d7fb904" class="">
+</p><blockquote id="20ce73cc-b8a2-46f9-97ce-4aa40f57c7a8" class="">“You can practice shooting eight hours a day, but if your technique is wrong, then all you become is very good at shooting the wrong way. Get the fundamentals down and the level of everything you do will rise.”
+
+ ― Michael Jordan</blockquote><p id="048b3089-3dee-4283-8339-64b3b69c55e1" class="">
+</p><p id="98702805-fce2-4b6b-842b-1a7220b677a8" class=""><strong>Action steps:</strong></p><p id="cbf049dc-7a2b-42be-af36-270b4aca23d6" class="">
+</p><ul id="12a01c87-9987-4465-8ce4-9fd73172021d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Spend some time researching what the fundamental concepts in your field are. </span></li></ul><ul id="1a31efac-f325-4dd9-8f43-76900f0b2069" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Grab a piece of paper and divide it into two columns. </span></li></ul><ul id="cad30dad-8a8e-4977-99ff-9ab23c3c747a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">On the left side, list all the knowledge you already have. </span></li></ul><ul id="8845b55c-9438-4bd8-a053-815e96dad0fa" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">On the right side, list all the knowledge you still need to acquire. </span></li></ul><ul id="75b1a4a0-0994-4568-a40f-3b93bd72dc43" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Plan a dedicated time of your day to study those concepts.</span></li></ul><p id="378eec35-f524-4bd9-8bf5-765894fa1fc3" class="">
+</p><p id="864643ac-8829-4d87-92e8-7aeefd924dca" class=""><strong>Other thoughts:</strong></p><p id="6f839b77-b02d-49ae-b726-1dd8cc3659ab" class="">💡 To learn a new language, Rewrite pet project with that new language. 100% focus on language.</p><p id="0b27e24f-5a21-4d6a-87d0-657df0adb6e8" class="">
+</p></details></li></ul><ul id="e85559d5-07c5-4afe-9565-daa95c8a9cd5" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 3: Teaching Equals Learning</mark></summary><p id="0aabd195-1d7d-4000-91b8-c4d48a9a25e9" class=""><strong>Big ideas:</strong></p><blockquote id="22bae0b7-1324-4c49-9efa-a44e84e3790a" class="">Power comes not from knowledge kept but from knowledge shared 
+
+— Bill Gates</blockquote><p id="a2bb615c-1726-47ff-91be-40b25251762d" class="">
+</p><figure id="1bff9d02-d651-4131-a7ce-f608ef2aa197" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled.png"><img style="width:422px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled.png"/></a></figure><p id="75be08db-d931-4bbc-9599-368e95981b23" class="">
+</p><figure id="d67cac41-a61e-4e96-b107-b7b245a84c9f" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%201.png"><img style="width:430px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%201.png"/></a></figure><p id="d2172523-dd78-4c63-ae25-400bb69085cf" class="">
+</p><p id="86bd9127-357d-46c6-93bd-83d2adf5f22a" class="">Act 5: Relieved it’s finally over. Some people reach out to you in the halls of the conference. They ask you about some ideas that you shared. Some questions don’t really make sense. Other questions are extremely interesting. You feel amazing. You feel like you have made an impact on people’s lives. A couple of months later, you submit a talk to give at another event and it all starts over.</p><p id="0b4968d5-41ed-4c18-8808-d368ef1a185f" class="">
+</p><p id="0671b316-bbf8-4871-a680-8731c98a75b4" class=""><strong>Arguments supporting big ideas:</strong></p><p id="3839982f-7f0c-44a8-8459-4acfec965154" class="">😊 LeedsJS Talks 😊 </p><p id="9ca52841-77bc-44bd-b148-862d14adcaed" class="">The presentation acts(1-5) may seem crazy, but if you’ve ever given a presentation, I’m sure that you can identify the same behaviors and patterns. Yet still we submit ourselves to this ordeal. And maybe the reason why is because, at the end of the day, the person who gets the most out of these teaching experiences is not someone in the crowd, it’s us!</p><p id="fa70c6e6-742b-40ce-8735-e0162d635f0e" class="">
+</p><p id="f983db57-c263-4228-995d-0f4289fa65b5" class=""><strong>Interesting facts, stats, or analogies:</strong></p><p id="4bd9bfb4-f16e-46ad-895d-0672fd7393a3" class=""><strong>Resonating quotes:</strong></p><p id="158e8752-1499-443e-8d6f-ca1c5c6fef3d" class=""><strong>Action steps:</strong></p><ul id="04e4d63f-c59a-4779-a834-e400ec949369" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Find an event online and submit a presentation. </span></li></ul><ul id="5779b8a6-3ed2-4c01-9ca0-e8470492a491" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Open a screen share software and record yourself doing something.</span></li></ul><ul id="8d69ce60-8272-49f9-b012-312d83f95550" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create a blog and share an article. </span></li></ul><ul id="0c586be5-b2ef-4601-95b3-58c34c5b663c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Choose any topic that you want to learn and try to teach it instead.</span></li></ul><p id="992a9b57-c24d-4307-ac4b-71cba9c6bf78" class=""><strong>Other thoughts:</strong></p><p id="65bc1757-80ab-4b6c-9b04-fd8dce87c597" class="">
+</p></details></li></ul></details></li></ul><ul id="f7890f2c-523d-4afc-a94e-6f8561a57ad8" class="toggle"><li><details open=""><summary><mark class="highlight-yellow">Part 3: Daily Habits</mark></summary><ul id="7b4d262f-244f-4936-866b-6a2434b4e28f" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 4: Be Boring</mark></summary><p id="6f50449e-063d-48d1-aa0d-abe4a9da1e7f" class=""><strong>Big ideas:</strong></p><ul id="93f57b2c-9ada-4c5d-822b-1932f94e9a0e" class="bulleted-list"><li>There is a fine line between <code>intensity</code> and <code>burnout</code></li></ul><ul id="dcd31339-f2f1-4969-bc8b-5bac2e9f1881" class="bulleted-list"><li><code>Discipline</code>, <code>Consistency</code>, <code>Persistency</code> are not sexy, but are keys to play <strong>Infinite Games</strong></li></ul><ul id="913b2f67-de82-472f-bbb4-6b976b9debce" class="bulleted-list"><li></li></ul><blockquote id="36388867-c65a-467f-8805-e99bd299d645" class="">Programming is an infinite game, even though most of us act like it’s a finite game. The players are known and unknown — there are always new programmers entering the job market. The rules are changeable — new paradigms emerge, new patterns are invented, new bugs are found. The objective is to keep playing — you can’t win in programming, you can only keep evolving the software to be better, more scalable, and more useful every day.</blockquote><p id="7741fc40-a1e9-4f1e-9196-2df6361990f8" class="">
+</p><p id="34bb41fd-a615-4baa-be06-b37a588a120a" class="">
+</p><figure id="f67d091d-5c82-4dd3-b630-27fc726b93a0" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%202.png"><img style="width:629px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%202.png"/></a></figure><p id="a68733d8-e9e8-47f4-99a8-c2f9e0a5177e" class="">
+</p><p id="90929115-f834-4887-b6a1-13ee81fd1944" class="">Programmers who are playing the finite game are focused on their bonus at the end of the year or waiting for that freelance project to end. Whereas programmers who are playing the infinite game are less worried about intensity and are more focused on consistency. They don’t know exactly when they will see results. In fact, different people will show results at different times. Still, without question, they all know it will work.</p><p id="576187e4-e218-4a21-aeaf-5fb31fdf83e1" class="">
+</p><p id="85fb271c-f424-4580-84dd-ad3779b39b15" class=""><strong>Arguments supporting big ideas:</strong></p><ul id="9dcb7108-fed7-4a78-9c18-09b08b8b80db" class="bulleted-list"><li>Book by Philosopher James Carse:
+Finite &amp; Infinite Games: A Vision of Life as Play and Possibility</li></ul><p id="eef9a1cd-a95e-41f9-b253-71c641c2da4f" class="">
+</p><p id="49f6d21e-34e1-4d8a-b9c2-1f189e1397ea" class=""><strong>Interesting facts, stats, or analogies:</strong></p><p id="81c7d0e7-8bb7-47d7-9000-def811ed3f4f" class="">Finite Game: Football. 11 players. Known players, fixed rules &amp; agreed-upon objectives. Win or lose</p><p id="12012b25-bcf0-4cae-b5e4-88df312dca44" class="">Infinite Game: Marriage. 2 Players. Known &amp; Unknown players. Changeable rules. Objective is not to win, just keep playing</p><p id="92cca452-b08d-4246-82a7-cfe6a2c49db4" class="">
+</p><p id="b63b3042-4449-44bf-9817-d3d11c76a062" class=""><strong>Resonating quotes:</strong></p><p id="f3ea1613-ea95-4224-b656-8365987f3326" class="">
+</p><p id="e7817621-4091-471e-b111-8cc0c88a91ac" class=""><strong>Action steps:</strong></p><ul id="77a1313b-8d20-4aa3-a1d3-016122585f4c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Are you playing a finite or infinite game? </span></li></ul><ul id="a2d18d43-612d-4645-92aa-732d2c08f753" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">How much time do you spend on going after short-term gains vs investing time in long-term outcomes?</span></li></ul><ul id="62245c91-2b5d-4f9c-b0bb-485a1af24303" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Have high integrity. Do right thing for the right reasons.</span></li></ul><ul id="b349fe3d-0e60-45bf-84db-b3afed62c59d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">It is essential to have fun and eat well.</span></li></ul><ul id="d85a81f4-76bd-45e3-80f4-cf2c4cde9938" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Invest time in doing things well &amp; communicating clearly.</span></li></ul><ul id="9a2495a9-7cd6-4971-a298-01d38c3d95d4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Take time to slow down and taking a pragmatic approach to problem solving</span></li></ul><p id="5d362e4d-9dfd-44d9-9c8c-b1011a5b99ea" class="">
+</p><p id="05608587-b9af-4739-ba2a-60e6fa605ba0" class=""><strong>Other thoughts:</strong></p><ul id="ac35c225-5a97-4a8e-82fc-8723deaf76d3" class="bulleted-list"><li>Have a defined Start &amp; End Time for your Day</li></ul><ul id="76666767-50be-47e2-9f0a-e50621da372a" class="bulleted-list"><li>Have not too much on your plate &amp; not so little either</li></ul><hr id="c6817176-b2ed-400d-a37f-83343143952c"/></details></li></ul><ul id="3bc40b2e-c93b-4bf2-8ac0-64bb2fb4aff5" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 5: Do it for your future self</mark></summary><p id="3028f138-31db-4006-9e2f-e17382459b08" class=""><strong>Big ideas:</strong></p><ul id="951631ec-39de-4771-a959-9a298948621d" class="bulleted-list"><li>No new Code without unit tests</li></ul><p id="0f7dd305-40e4-4852-b6e8-90eb43e095a8" class="">
+</p><p id="9ea2b34e-8de0-44d1-ac9c-0c30ad601993" class=""><strong>Arguments supporting big ideas:</strong></p><p id="5bf5da11-fe3c-4a4e-9dc2-07c119f95704" class=""><strong>Interesting facts, stats, or analogies:</strong></p><p id="819b8fd1-4bb7-46fc-a306-5e2c44521cca" class=""><strong>Resonating quotes:</strong></p><p id="dea88f4f-fe54-4df2-b584-bbf730ab2aa3" class=""><strong>Action steps:</strong></p><ul id="93a4cd92-ff9e-4a05-9724-985e222215a1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Open a current project &amp; refactor to help your future self</span></li></ul><p id="4f6a61e3-9a26-492c-aa8c-5cc723fb9980" class=""><strong>Other thoughts:</strong></p></details></li></ul><ul id="bd43e9b9-14bc-40bf-abc5-6778a351e1a9" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 6: Your 9-to-5 is Not enough</mark></summary><p id="da2105f1-e5a6-4b61-81f8-f8313062a429" class=""><strong>Big ideas:</strong></p><p id="b971dd37-eb8d-47b9-87b8-71eed45818b9" class="">
+</p><ul id="413c4f5d-f1de-49ae-b22a-f9a3e3a1ad49" class="bulleted-list"><li>After all, at the end of your life, when you look back at everything you did, you don’t want your scoreboard to look like this: <ul id="a43d37e6-2898-4630-93e8-398ddec4622f" class="bulleted-list"><li>Software developer: 9/10 </li></ul><ul id="b1ef1c01-b836-4c04-9b4e-f63247893bd6" class="bulleted-list"><li>Husband/wife: 2/10 </li></ul><ul id="cf09100a-9e7e-4f42-8513-ba5e33cd5e93" class="bulleted-list"><li>Father/mother: 4/10</li></ul></li></ul><p id="f2cebe8e-de49-4dca-9da7-92a982e1f499" class=""><strong>Arguments supporting big ideas:</strong></p><p id="f97baa79-f929-4635-a6e2-7322ae6410a5" class=""><strong>Interesting facts, stats, or analogies:</strong></p><p id="f9755c1e-592c-41bc-ab64-affab1d20dfc" class="">One could argue that we don’t expect policemen to go hunting criminals on their own time, or firefighters to put out extra fires. So why should we expect programmers to use their free time to learn something new? The answer lies in the nature of our work.</p><p id="88d88cda-f65e-4048-9895-1a7123d32714" class=""><strong>Resonating quotes:</strong></p><p id="598e3d60-b87c-4fef-ac35-b8a2a096cdc4" class="">You can watch Netflix and still be productive. You can play your PlayStation and still work on an open source project. You can enjoy quality time with your husband/wife and still read a book. Don’t let people think you can’t relax and get stuff done. You have more than enough time.</p><p id="df44398f-60e4-493a-ab85-8f0db5158b8f" class="">
+</p><p id="b4a63fdb-2ee6-4efa-a77c-a4f89e60e38b" class="">
+</p><blockquote id="2e1dd21b-c176-439c-8bdc-321f191188f8" class="">The truth is that, like most developers out there, I really love what I do, so when I’m excited about a project I might work extra hours, but that doesn’t affect my quality of life, because I wasn’t forced to do that.&quot;</blockquote><p id="0dce97a5-5c23-4b18-958c-993372c41e9c" class="">
+</p><p id="530565cc-d1a5-4385-a367-f2544eb0d4fe" class=""><strong>Action steps:</strong></p><p id="83b63e76-aaee-4343-902d-98946941da1e" class="">Think about the skills you think could be improved. Can you plan some extra time to develop them? Even 10 minutes a day could make a difference.</p><p id="14922272-d737-48f7-b4e7-6aed001fee0b" class=""><strong>Other thoughts:</strong></p></details></li></ul></details></li></ul><ul id="8bf7e3ec-4d60-4c74-8428-bf669e9d52ca" class="toggle"><li><details open=""><summary><mark class="highlight-yellow">Part 4: Career Habits</mark></summary><ul id="738699b5-f6ec-4c07-82cc-7736fd01f4a9" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 7: Master the Dark Side</mark></summary><p id="03f9d939-a431-4545-a3d0-d087a0811a2e" class=""><strong>Big ideas:</strong></p><p id="d46b0a46-7a88-4a02-8e5c-59a4baa65eb0" class="">Remember, a person who knows how to code is powerful, a person who knows how to code and knows how business works is unstoppable.</p><p id="04337ddb-09f6-40f3-9e10-b09bff5b6ea5" class=""><strong>Arguments supporting big ideas:</strong></p><p id="2f7ed851-dce9-4bd5-8d38-3a668ba98fe4" class=""><strong>Interesting facts, stats, or analogies:</strong></p><p id="cf9e2087-deef-490b-aab6-7c9df8ca5b8c" class=""><strong>Resonating quotes:</strong></p><p id="eb0e82db-2a89-4be9-ab6f-89723fa1e64d" class=""><strong>Action steps:</strong></p><ul id="9ee2757a-8d31-4017-ae59-caab9c8a800b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Elaborate a list of the most common terms used in your industry. </span></li></ul><ul id="ce6fd286-b1da-40c7-b7d6-33ad326eb614" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Start a conversation with your colleagues to understand their areas. </span></li></ul><ul id="71055779-d91c-4b57-bd3f-fce750d5d760" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">What does the sales funnel look like? </span></li></ul><ul id="52de3ba1-7062-49b9-9ad7-6506e8736ef7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">What marketing niches are being targeted? </span></li></ul><ul id="c95340bd-1511-4afd-b6aa-55b896a3692b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">What are the most common questions for customer support? </span></li></ul><ul id="3958e7a7-538c-4c3d-816c-32b6c10c8ac9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">How is your product different from those of competitors?</span></li></ul><ul id="ce2578c2-1bab-4fa0-8bc7-868671c60545" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Always ask what is the problem you are trying to solve?</span></li></ul><p id="5edd1cdf-66ef-4894-8abb-a569ed07cb2c" class=""><strong>Other thoughts:</strong></p></details></li></ul><ul id="bc2ba32f-e4ba-4293-a38a-0cc8502875a2" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 8: Side Projects</mark></summary><p id="59607c83-b1f2-472c-856c-e97aa169d639" class="">Big ideas:</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="28ba31d3-6f2d-4288-9e3c-ba9362a681e3"><div style="font-size:1.5em"><span class="icon">🤷🏻</span></div><div style="width:100%">Not a revelation, I always follow this chart</div></figure><figure id="785d14a4-34a8-42d3-a111-85fcbc4a0ea1" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%203.png"><img style="width:614px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%203.png"/></a></figure><p id="551958e1-1bcb-484f-82cd-8c5c3730106c" class="">Arguments supporting big ideas:</p><p id="36e8d333-ec23-4349-ba91-257ecf7c6241" class="">&quot;I love side projects. They allow me to express my creativity and invest in myself by encouraging me to learn new skills to accomplish the goals I’ve set. Over the years, side projects have pushed me to level up my CSS, learn React, become better at design, and so much more. Those skills have been instrumental in helping my career growth and have opened up doors for me that would have been otherwise closed.</p><p id="c858ef51-06f7-4b56-abf5-430b8c7e118d" class="">Interesting facts, stats, or analogies:</p><p id="d9885fb9-aa96-4288-8103-43d76254fdba" class="">Resonating quotes:</p><blockquote id="03ba4647-a981-4c95-9287-fb8b6c1f39ca" class="">“Failure and invention are inseparable twins. To invent you have to experiment, and if you know in advance that it’s going to work, it’s not an experiment.” 
+
+― Scott Galloway</blockquote><p id="ebdde5b0-a80f-42f2-861c-6b5e41100085" class="">Action steps:</p><ul id="27d65065-b096-4d59-a584-82fcd9bcf136" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Am I ready to give up personal hours to work on this project? </span></li></ul><ul id="414e0004-dda5-4369-b721-73cb48c61e7f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Do I really enjoy this subject, field, type of work? </span></li></ul><ul id="537c6189-a17d-4582-8c72-cd4c305ca7f8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Am I willing to spend at least 5 Years working on this Idea?</span></li></ul><ul id="e3e08603-3e6a-4a07-90b6-0626142642e4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Can I execute this Idea fully by Myself?</span></li></ul><ul id="cf126cbb-1f8c-4636-b0e4-6860670754af" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Saying <code>&quot;yes&quot;</code> to one idea, means saying <code>&quot;no&quot;</code> to bunch of other ideas. Do you want to say <code>&quot;yes&quot;</code> ?</span></li></ul><ul id="adcf94d4-76fa-4767-a07a-76f555867ea7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Is this particular idea better than others, I had in the past? Is there any other Idea that could better use my time?</span></li></ul><ul id="54697dc2-9763-4dfb-ab12-21c0c4fe86bf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Do I personally experience this problem or am I solving it for someone else?</span></li></ul><ul id="46e38d4f-c99e-4e61-bc8b-55db766701aa" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Why Am I excited about this Idea now? </span></li></ul><p id="e760c407-3d43-48fa-971d-a21280828864" class="">
+</p><p id="335b4a54-fdee-47db-8cdd-bf28f2bab546" class="">Other thoughts:</p></details></li></ul><ul id="8b540e1d-2959-449f-a42c-4a850f55a583" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 9: Mario or Sonic</mark></summary><p id="ba2eb0ce-dcff-44d7-9a4d-f637ac77151a" class="">Big ideas:</p><p id="d6f6374d-9ebe-4544-b56b-77b379b475c5" class="">
+</p><p id="adac2680-0b2a-49b8-ba7d-593b1cee5654" class="">Arguments supporting big ideas:</p><p id="9011d5f4-14ed-4748-bf24-afcf6ce35a91" class="">
+</p><p id="070cbddc-84c6-42d7-aeac-9ff901fbc54d" class="">The less time you spend on a project, the more superficial you’ll be as a professional. In contrast, the more time you spend on a project, the more opportunities you’ll have for long-term impact.</p><p id="d0df03fb-223a-4b06-b5ec-5a363f640034" class="">
+</p><p id="f4263fd4-05f2-4c5d-bb6a-94b0468383c4" class="">Interesting facts, stats, or analogies:</p><figure id="9fbdd953-f61f-4be5-ad93-ca527489b5bb" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%204.png"><img style="width:240px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%204.png"/></a></figure><figure id="afb83931-4003-47c8-a101-f3a20f7c9b6a" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%205.png"><img style="width:240px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%205.png"/></a></figure><p id="d6b8c95b-411f-465c-9882-11063cb3b714" class="">
+</p><p id="15bae216-7b2c-4e29-9f88-e3dc1fd38a76" class="">Resonating quotes:</p><blockquote id="18f1e61c-fc65-4a60-81bc-22e0fa0a6ab3" class="">“Because pain is the universal constant of life, the opportunities to grow from that pain are constant in life. All that is required is that we don’t numb it, that we don’t look away. All that is required is that we engage it and find the value and meaning in it.” 
+
+― Mark Manson</blockquote><p id="75977fc8-3f9c-455e-9ffd-aee68616f968" class="">Action steps:</p><ul id="0a9c72c9-442e-4695-a9e6-94f5629b5aff" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Think about the three things you love the most about your current job. </span></li></ul><ul id="86a4428c-cb60-4494-8fb1-128b7f77f7c1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Think about the three things you hate the most about your current job. </span></li></ul><ul id="6078dd42-dc6e-45e7-a389-4f4615f7a1b0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Is there anything you can do to turn those bad parts into good parts? </span></li></ul><ul id="ac9e7274-ad8b-41b6-80f1-3aae5c446267" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Are these changes outside of your control or not?</span></li></ul><p id="5d89046d-0732-43da-b988-9af05cef77f8" class="">
+</p><p id="fcc74e61-ba7f-482b-abed-de57190e335e" class="">Other thoughts:</p><ul id="400c43c0-b256-4592-ad4f-f0f76061cae8" class="bulleted-list"><li>NTT Data has transformed my life profoundly and I am incredibly grateful for that. I stayed so long because there was so much to do, so much to learn, and my work was impactful. Marty Cagan, from the Silicon Valley Product Group, has a great article on ‘<a href="https://svpg.com/missionaries-vs-mercenaries/">Missionaries vs. Mercenaries</a>’. I am very much a missionary. I believe you have to stay somewhere for a certain amount of time to make an impact and to expose yourself to the opportunities that will take your career to the next level. I think of every job in terms of investment and return, and it’s not just about money, it’s about the return of the investment for your career as a whole.</li></ul><ul id="b0738119-8c64-42d9-9c75-d64f17263391" class="bulleted-list"><li>Working 40~50 hours per week is a pretty significant time investment in your life, so it’s very important that you’re satisfied with your current job, regardless of the pay, or how far along you are on some career ladder.&quot;</li></ul><ul id="6c865afe-21c6-47ae-858a-71b9d61f9c14" class="bulleted-list"><li>I entered as a Java developer with some experience in the technology this company used, and I left as a software engineer with a totally different profile. I had the chance to work with many stacks and technologies, often not even related to the product. Cloud, virtualization, automation, programming languages, design patterns. I can say that half of my expertise comes from my time there.</li></ul><p id="3e935893-1967-42ad-83d2-162bbafd9ae0" class="">
+</p></details></li></ul></details></li></ul><ul id="6d17278a-7b3c-46ed-97fa-128e5e57fa39" class="toggle"><li><details open=""><summary><mark class="highlight-yellow">Part 5: Team Habits</mark></summary><ul id="70f97c69-c9ee-4051-8baf-48ab86f80d6e" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 10: Active Listening</mark></summary><p id="e98db632-82e6-491b-a34d-d175a8f4abbc" class="">Big ideas:</p><p id="117d5dcb-c8d0-47e6-8637-96cde9f2a8b1" class="">A company is not a logo, it’s not a building, it’s just an agglomeration of people, and if you want to become effective there, you need to be able to communicate well, even if you’re an introvert.</p><p id="cd43ba8b-95bf-46fa-8004-0bf8efc39ae7" class="">
+</p><p id="fbcab075-31da-417c-9598-b625905e1740" class="">One misconception many people have is that we need to listen to reply, whereas in reality, we need to listen to understand. Understanding someone is far more important than replying to someone.</p><p id="0ccb37d7-f27a-42a6-8b72-ed9eafaffc43" class="">
+</p><p id="abd8780c-c2e6-42be-86b2-2f0f41bae109" class="">People come from different background, bring different experiences and skills to the mix. When someone joins your team, consider it as a new team has formed instead of the existing team plus one.</p><p id="270b8a60-6600-4831-9493-2b78d968f563" class="">
+</p><p id="0e021843-1dbf-4c5e-9aec-eab36d29fbe8" class="">Arguments supporting big ideas:</p><p id="00d6936e-bdc4-46d0-9681-15bc3172e6c0" class="">Interesting facts, stats, or analogies:</p><p id="ba480136-ae79-435f-a35d-ee3230247ead" class="">Resonating quotes:</p><blockquote id="702899d4-88ab-48c9-a232-bcecf8ba2943" class="">“Wise men speak because they have something to say; Fools because they have to say something.”
+- Plato</blockquote><p id="d61daa77-8898-456e-8d07-a1716ca5780a" class="">
+</p><blockquote id="c59048c4-0e4f-4a59-96d0-cd6826310096" class="">“Everyone you meet is fighting a battle you know nothing about. Be kind. Always.”
+Rocha, Zeno. 14 Habits of Highly Productive Developers (p. 91). Kindle Edition.</blockquote><p id="9866f532-15b6-4b06-8605-294208614b69" class="">
+</p><p id="0439ab4b-d44d-4bdf-a6ae-cbc6d3e94ca0" class="">Action steps:</p><ul id="6ceaa197-d6b3-4041-904f-54a4cceeb0f7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Choose to practice your listening skills. </span></li></ul><ul id="f83bd591-beec-45ea-bb82-22c2d492834a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In a meeting, Instead of being the first to say something, wait until everybody shared their ideas, and be the last one to speak. 
+
+This will give everybody else the feeling of being heard, plus you have the benefit of listening to everyone’s ideas before sharing your own opinions.</span></li></ul><p id="4abe08e2-4c33-4f5d-b84f-2d0857db0ad5" class="">
+</p><p id="379c0bab-a749-4207-a7dd-1920a4df46f4" class="">Other thoughts:</p><p id="628241fa-ecf0-4535-8200-9345c5608874" class="">
+</p><p id="36e437dc-5c0a-4c7b-afe5-84954568fbc4" class="">
+</p></details></li></ul><ul id="b38135c7-0e71-4e25-b77d-687fa463d044" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 11: Don&#x27;t Underestimate</mark></summary><p id="909005ea-d8eb-433e-8ca8-3e9ff87a4d68" class="">Big ideas:</p><p id="10f7394c-99fb-4c08-92ca-a041d0b4dd9e" class="">I’ve never seen anyone get angry at software being delivered early. If you live by ‘under-promise and over-deliver’ when it comes to software estimates, you’ll be in good company.”</p><p id="2e45c927-cd23-4e72-8ad8-ab205525173e" class="">Why we give wrong estimates:</p><ul id="ea8de1ec-f87b-435e-91c4-137f36490e61" class="bulleted-list"><li>We want to impress others</li></ul><ul id="af80bd1a-2e24-4f1e-b500-f9afa3b6b2f9" class="bulleted-list"><li>We forget that&#x27;s not all about coding</li></ul><ul id="6f39baed-ae2e-4f8a-8da6-7f8cf5e394ea" class="bulleted-list"><li>We don&#x27;t focus on one thing</li></ul><ul id="35f355bd-a5e7-4a20-b112-cc23e64025a6" class="bulleted-list"><li>We think everyone is the same</li></ul><ul id="99767d2e-8b48-41f9-901d-1789eb657131" class="bulleted-list"><li>We can&#x27;t handle the pressure</li></ul><p id="7b55e827-4a03-4484-a15e-23370707443e" class="">Arguments supporting big ideas:</p><p id="d3e27fb8-ac25-401c-89be-e7b9fdf4c824" class="">Under-promise &amp; over-deliver - Package delivery from online shop, ETA was 4 days, but actually delivered on 2 days.</p><p id="4a593ccf-94aa-42ce-92e9-d2b32d661bf2" class="">
+</p><p id="fdb49de5-5a92-4d57-86a0-4392ee45a032" class="">Interesting facts, stats, or analogies:</p><figure id="a02115ed-67a8-4f15-9a99-561a3b549156" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%206.png"><img style="width:384px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%206.png"/></a></figure><p id="9f175da9-640b-4a4f-b133-9a86050a88fe" class="">
+</p><figure id="757131fe-ef2e-423b-9a95-935f96372c3f" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%207.png"><img style="width:384px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%207.png"/></a></figure><p id="626ef8c5-dde1-4481-9e58-bc831ef3a999" class=""><strong>Resonating quotes:</strong></p><p id="1f86d057-2909-4442-a60c-4fedf3e8017c" class=""><strong>Action steps:</strong></p><ul id="326ffad5-9741-43e4-b05e-8dd8edd0d98a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Every time when you give an estimate, run a stop watch and measure whether you met the planned estimate. Repeat the same for next task.</span></li></ul><p id="712c2821-d524-4a7a-b34a-dcba5e32e999" class=""><strong>Other thoughts:</strong></p></details></li></ul><ul id="e6f0b697-3049-4c1a-ace1-b8b5c10e9b0c" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 12: Specialist vs Generalist</mark></summary><p id="9ff310b6-d343-49c2-afb3-82fa92e2108f" class="">Big ideas:</p><p id="adf86186-2dfe-4ecc-904f-f2325c48fd8e" class="">What path should you take next? </p><ul id="d608065d-1229-47dd-bd76-01957970cfd5" class="bulleted-list"><li>Become a specialist, someone aware of all the details in a certain subject. </li></ul><ul id="c117dda4-a0f1-4081-8fd1-2302a586ff37" class="bulleted-list"><li>Become a generalist, someone able to tackle a variety of different subjects.</li></ul><p id="123e055d-dae1-45cc-97fb-028b36b265f7" class="">Arguments supporting big ideas:</p><p id="96b78077-20e0-4df8-b73a-84bde02d4210" class="">Interesting facts, stats, or analogies:</p><p id="4ca2f94f-7b1b-4ba2-8171-dffc5ffe5795" class="">
+</p><figure id="8db335bb-7054-428b-b9ac-d2265f391b66" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%208.png"><img style="width:388px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%208.png"/></a></figure><p id="20a525bc-8e6f-47ee-bb27-f8f0a3a752ec" class="">Resonating quotes:</p><blockquote id="734b5d6d-0856-42ce-8848-bdddd50d1a5c" class="">“The next Bill Gates will not build an operating system. The next Larry Page or Sergey Brin won’t make a search engine. And the next Mark Zuckerberg won’t create a social network. If you are copying these guys, you aren’t learning from them.” 
+
+― Peter Thiel</blockquote><p id="07050a7e-2231-4eba-be2c-dda6151e8ea1" class="">Action steps:</p><ul id="28646db2-0804-4a43-b446-22a7ec96cdbe" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Examine your work day. Examine your work week.</span><ul id="011628be-893d-4dc3-99e0-31b550ed2a8f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">What are the parts that drive you the most?</span></li></ul><ul id="410fb98d-a6a7-4793-b66b-9dff8b30368a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">What type of work would you rather do?</span></li></ul></li></ul><ul id="a667ce01-879f-4aa1-a91f-70049e562411" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Examine your company.Examine your team.</span><ul id="a08b3357-747a-41d9-829b-e3696b18e19c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">What are they struggling the most?</span></li></ul><ul id="f94d41d6-7392-42a0-8c7d-12a4dbcf4ec4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Is there anything you can help with?</span></li></ul></li></ul><p id="942a7cff-b469-4ead-958d-b0b0c2b8aac6" class="">Other thoughts:</p><p id="9e6a1168-1d0f-4bcc-b841-ef578b17aff1" class="">
+</p><p id="8ed652f8-0865-4b86-a2bc-25764a0f7d43" class="">I focus on understanding what drives me in software engineering, and then I try to invest myself in that area so I can continue learning and improving my skills. It doesn’t necessarily mean to work specifically with the same technologies or languages. It means finding what makes me feel the best about my work, that interests and motivates me, and then using it to drive me to become what I admire the most about it.&quot;</p></details></li></ul></details></li></ul><ul id="43f49a12-1aff-4f99-b573-f1f5c1c71ac9" class="toggle"><li><details open=""><summary><mark class="highlight-yellow">Part 6: Life Habits</mark></summary><ul id="ca631d2c-6cc6-4eb9-acfb-fa70a5cea042" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 13: Control your Variables</mark></summary><p id="533fa48b-8a89-490f-adc2-00c1c75dcd56" class="">Big ideas:</p><p id="9c5162dc-a7b8-4cef-98dd-ce0e90a64bbb" class="">
+</p><figure id="d5b2d1bc-4c91-44e5-a59b-30d276082e15" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%209.png"><img style="width:594px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%209.png"/></a></figure><p id="725af12c-02ef-42c4-bbb6-41db528492cf" class="">Arguments supporting big ideas:</p><p id="e7f8fd93-b148-49d9-9810-0d5e9ccabeb0" class="">Interesting facts, stats, or analogies:</p><p id="d042af7c-27bd-489e-a895-6d56cc6efddc" class="">Newton formulated his theory of gravity, a new theory of light and calculus during the bubonic plague.</p><figure id="5ef5266b-851e-443b-b15a-9ff22cefb89c" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%2010.png"><img style="width:578px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%2010.png"/></a></figure><p id="438677d3-bb9a-44e4-9a3e-d28df18d9133" class="">Resonating quotes:</p><blockquote id="f1bdbc04-4ae8-43c5-bbd4-375831ad6f88" class="">“The only thing you sometimes have control over is perspective. You don’t have control over your situation. But you have a choice about how you view it.”
+
+ ― Chris Pine</blockquote><p id="a6f0655b-8304-465e-84cd-fc7947dcb43d" class="">Action steps:</p><ul id="6e8ce4b5-9563-4087-88ce-f0942ef17224" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Stop wasting time on variables that are out of your control.</span></li></ul><ul id="c38b73f1-7056-4f7c-aecf-a388af2e9194" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Focus on the variables that you can change</span></li></ul><p id="250932c7-9853-468b-8bf7-feabd47ee24d" class="">Other thoughts:</p><ul id="054f07c4-02ba-4395-94be-b1bcf680bdf6" class="toggle"><li><details open=""><summary>Variables you can control</summary><ul id="bf691bf6-8410-4ce9-8e70-4819c104e3cc" class="bulleted-list"><li>Your thoughts </li></ul><ul id="1f6889eb-8b01-459e-95ac-accba7314074" class="bulleted-list"><li>Who your friends are </li></ul><ul id="7e028bdb-b296-480c-ac3f-91673602781e" class="bulleted-list"><li>What you eat and drink </li></ul><ul id="3d958d24-73c1-4d1f-9dc3-9645e0c206dd" class="bulleted-list"><li>How you spend your money</li></ul><ul id="63219905-813d-4aee-8ade-e11ea307192a" class="bulleted-list"><li>What you do with your time </li></ul><ul id="a8e82a4c-5b26-40a8-819f-14226e11e640" class="bulleted-list"><li>How you treat your body </li></ul><ul id="e4481c65-bf7b-4a37-a1a7-f2cc0d010449" class="bulleted-list"><li>How much you appreciate the things you already have</li></ul></details></li></ul><ul id="3995eb79-0070-46de-83d9-74fc168cbd1c" class="toggle"><li><details open=""><summary>Variables you can not control</summary><ul id="fd49558c-63d9-480c-a4e1-3f3ec388099a" class="bulleted-list"><li>The weather</li></ul><ul id="43d4ea3b-1ad6-4a1a-9821-9f4206da6625" class="bulleted-list"><li>The economy </li></ul><ul id="7d5df93f-47de-4745-94a2-c350d86e49a9" class="bulleted-list"><li>The public health </li></ul><ul id="7cc19682-bdbd-4fa3-a177-b9c8f9930745" class="bulleted-list"><li>How people treat you </li></ul><ul id="85fc1e85-0391-492f-a297-583c03c4ae0c" class="bulleted-list"><li>What people think of you </li></ul><ul id="36e81562-6d14-4d85-887b-e3f27a66e3f5" class="bulleted-list"><li>What people like or dislike </li></ul><ul id="1f4ef8bd-e5d8-4f21-b040-9f135bf6bcab" class="bulleted-list"><li>What happened in the past</li></ul></details></li></ul></details></li></ul><ul id="2e567977-cee7-475d-9ec8-035d8d7668cd" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Habit 14: Stop Waiting</mark></summary><p id="d898e0eb-c068-4878-b2ad-b7852f481490" class="">Big ideas:</p><p id="012c050a-322f-4cb3-bfb8-c7cfd1882c99" class="">
+</p><p id="d579251b-a718-4944-b189-4222fb435adb" class="">The fact is, most people have the ability to recognize what bothers them, but only a few people have the courage and determination to face those challenges.</p><p id="cb44f016-1039-4346-acc6-39462a5e4a86" class="">Arguments supporting big ideas:</p><p id="8c674712-78a7-42ce-af08-88df7138c6bd" class="">Interesting facts, stats, or analogies:</p><p id="7ad2ce03-5557-4288-be11-8897865ebd2a" class="">Resonating quotes:</p><blockquote id="c5ae4101-a61c-48bc-a9b1-e40a261a608a" class="">“We suffer more often in imagination than in reality.” 
+
+― Seneca</blockquote><p id="3d0b2f61-a9c0-49e5-9118-57385dddb7ab" class="">
+</p><blockquote id="fd8b342f-85fc-4eeb-8d90-11a78e3ceb56" class="">The only thing that prevents you from achieving something is yourself.</blockquote><p id="11681eaa-add7-4f1a-b1eb-e50bf8b40d7a" class="">
+</p><p id="78c400c8-1022-4722-a852-58245f4052a5" class="">Action steps:</p><ul id="39fea48b-8777-4c27-b162-f07f2f608d48" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Stop being romantic</span></li></ul><ul id="872aa401-6551-4873-bb55-a4152b7730cb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Start being practical</span></li></ul><ul id="e53431d7-b48b-45d9-9b05-c473bfda1a68" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Behind each goal there is a series of tasks that could be done today</span></li></ul><p id="3d3b1869-c191-4b24-9db0-507d70405b2e" class="">Other thoughts:</p><p id="3b9e93e8-1b44-4940-bf57-ea25aacdb5c9" class="">
+</p><p id="963ee7d2-2f17-44ea-9feb-09c723eace83" class="">Do you want to invest in an idea? If so, how many hours are you dedicating to this project? Can you wake up 1 hour earlier? Can you sleep 30 minutes later? What about lunch time, can you make it shorter?</p><p id="4d20cfa5-f4a5-44cb-8775-cd4d3d075e66" class="">
+</p><blockquote id="3aea8820-a612-474d-a0a8-28f494a9bdd5" class="">You just finished reading this book. You can close it and continue with your life, or you can try to adopt these habits starting today. So what are you going to do next? What are you waiting for?</blockquote><figure id="5bab7708-0f08-4874-9488-eb9cde8916a8" class="image"><a href="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%2011.png"><img style="width:467px" src="14%20Habits%20of%20Highly%20Productive%20Developers%201bff9d02d6514131a7cef608ef2aa197/Untitled%2011.png"/></a></figure><p id="eac9dc9e-d73c-44df-87ad-a78fd3c9dbf9" class="">
+</p></details></li></ul></details></li></ul><p id="1c8e538e-049a-4ff8-8ffc-f77bcde26b1c" class="">
+</p><h3 id="76a6e928-5eb4-414c-9eb7-c0f8e832fd65" class="">Quotes</h3><p id="2ea89017-71e5-4fd9-93b8-e3337966d3fd" class="">
+</p><blockquote id="049574c3-1038-4894-b847-d9d2f9e075b2" class="">“And now the end is near. And so I face the final curtain. My friend, I’ll say it clear. I’ll state my case of which I’m certain. I’ve lived a life that’s full. I’ve travelled each and every highway. And more, much more than this. I did it my way” 
+
+― Frank Sinatra</blockquote><p id="a6f5b761-a24a-4ba0-90ae-47172591944d" class="">
+</p><h3 id="cd788504-b920-47a5-92ee-0503302d6f0b" class="">Symbols</h3><p id="f6b35d22-c404-42b4-ba2a-7dd77e689179" class=""><mark class="highlight-blue"><strong>Shades of Stoicism</strong></mark><mark class="highlight-blue"> on Chapter 13: Control your variables</mark></p><p id="99f1a700-6007-459e-aeb6-79975ae9a7c6" class="">
+</p><h3 id="8e909ea2-929b-4b99-a200-a0dfbc161fc4" class="">Reference Links</h3><p id="bd596244-2660-413e-81c7-f9b6f5c4a9b1" class="">
+</p><p id="57d7436b-7c06-41a0-941c-93e16a5434c5" class="">
+</p></div></article></body></html>
